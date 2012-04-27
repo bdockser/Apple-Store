@@ -19,6 +19,8 @@
 		9DA322D41544E778000858F0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA322D31544E778000858F0 /* SecondViewController.m */; };
 		9DA322E01544E7CD000858F0 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA322DE1544E7CD000858F0 /* 1.png */; };
 		9DA322E11544E7CD000858F0 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DA322DF1544E7CD000858F0 /* 2.png */; };
+		9DF17E39154B1E650033D8A2 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF17E38154B1E650033D8A2 /* Product.m */; };
+		9DF17E3D154B1F0B0033D8A2 /* AppleStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF17E3C154B1F0B0033D8A2 /* AppleStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,10 @@
 		9DA322D31544E778000858F0 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		9DA322DE1544E7CD000858F0 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		9DA322DF1544E7CD000858F0 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		9DF17E37154B1E650033D8A2 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		9DF17E38154B1E650033D8A2 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		9DF17E3B154B1F0B0033D8A2 /* AppleStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleStore.h; sourceTree = "<group>"; };
+		9DF17E3C154B1F0B0033D8A2 /* AppleStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,10 @@
 			children = (
 				9DA322DE1544E7CD000858F0 /* 1.png */,
 				9DA322DF1544E7CD000858F0 /* 2.png */,
+				9DF17E37154B1E650033D8A2 /* Product.h */,
+				9DF17E38154B1E650033D8A2 /* Product.m */,
+				9DF17E3B154B1F0B0033D8A2 /* AppleStore.h */,
+				9DF17E3C154B1F0B0033D8A2 /* AppleStore.m */,
 				9DA322C51544E778000858F0 /* AppDelegate.h */,
 				9DA322C61544E778000858F0 /* AppDelegate.m */,
 				9DA322C81544E778000858F0 /* MainStoryboard.storyboard */,
@@ -183,6 +193,8 @@
 				9DA322CD1544E778000858F0 /* FirstViewController.m in Sources */,
 				9DA322D41544E778000858F0 /* SecondViewController.m in Sources */,
 				9D16570A15462141002291D6 /* DetailViewController.m in Sources */,
+				9DF17E39154B1E650033D8A2 /* Product.m in Sources */,
+				9DF17E3D154B1F0B0033D8A2 /* AppleStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,9 +7,11 @@
 //
 
 #import "DetailViewController.h"
+#import "Product.h"
 
 @implementation DetailViewController
-@synthesize rowNum;
+@synthesize detailItem = _detailItem;
+@synthesize titleLabel, priceLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,6 +31,28 @@
 }
 
 #pragma mark - View lifecycle
+
+
+- (void)setDetailItem:(id)newDetailItem
+{
+    if (_detailItem != newDetailItem) {
+        _detailItem = newDetailItem;
+        
+        // Update the view.
+        [self configureView];
+    }
+}
+
+- (void)configureView
+{
+    // Update the user interface for the detail item.
+    
+    if (self.detailItem) {
+        Product *theProduct = (Product *)self.detailItem;
+        self.titleLabel.text = theProduct.title;
+        self.priceLabel.text = theProduct.price;
+    }
+}
 
 /*
 // Implement loadView to create a view hierarchy programmatically, without using a nib.

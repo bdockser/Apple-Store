@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class AppleStore;
+@class DetailViewController;
+
 @interface SecondViewController : UIViewController
 
-@property (nonatomic, strong) NSMutableArray *dummyArray;
-
-- (void) setupArray;
+@property (strong, nonatomic) DetailViewController *detailViewController;
+@property (strong, nonatomic) AppleStore *myAppleStore;
 
 @end

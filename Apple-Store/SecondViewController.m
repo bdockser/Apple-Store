@@ -8,33 +8,46 @@
 
 #import "SecondViewController.h"
 #import "DetailViewController.h"
+#import "Product.h"
+#import "AppleStore.h"
+
 #pragma mark - View lifecycle
 
 @implementation SecondViewController
-@synthesize dummyArray;
+@synthesize myAppleStore;
+@synthesize detailViewController = _detailViewController;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.myAppleStore = [[AppleStore alloc] init];
+    }
+    return self;
+}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[self setupArray];
 }
 
-- (void)setupArray {
-    dummyArray = [[NSMutableArray alloc] init];
-    [dummyArray addObject:@"Object 1"];
-    [dummyArray addObject:@"Object 2"];
-}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [dummyArray count];
+- (NSInteger)tableView:(UITableView *)tableView 
+ numberOfRowsInSection:(NSInteger)section
+{
+    return self.myAppleStore.count;
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
+    
+    DetailViewController *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"Detail"];
+    [self.navigationController pushViewController:detail animated:YES];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -42,19 +55,24 @@
     }
 
 
-    cell.textLabel.text = [dummyArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.myAppleStore productatIndex:indexPath.row].title;
+
 
     return cell;
 
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *__strong)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Product *selectedProduct = [self.myAppleStore productatIndex:indexPath.row];
     
-    DetailViewController *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"Detail"];
-    [self.navigationController pushViewController:detail animated:YES];
-    
-    detail.rowNum.text = [NSString stringWithFormat:@"This is row %d", (indexPath.row +1)];
+    if (!self.modalViewController) {
+        self.modalViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+    }
+    self.modalViewController.detailItem = selectedProduct;
+    [self.navigationController pushViewController:self.modalViewController animated:YES];
 }
+
 
 - (void)viewDidUnload
 {
